@@ -13,7 +13,7 @@ export function Footer() {
         <div className="mb-[38px] flex flex-col justify-between lg:mb-[58px] lg:flex-row">
           <div className="order-1 mr-[183px] flex w-full flex-col items-center font-normal text-white lg:w-[120px] lg:items-start xl:w-[202px] 2xl:w-[25%]">
             <a href="/">
-              <img src={"/assets/main/header/logo-master.svg"} alt="Logo" />
+              <img src={"/assets/header/logo-master.svg"} alt="Logo" />
             </a>
             <p className="mt-[14px] text-sm lg:mt-[18px] xl:pr-16">
               {t("footer.logo-text")}

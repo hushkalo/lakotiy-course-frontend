@@ -34,12 +34,12 @@ export function QuestionsAndAnswers() {
       className="relative z-0 overflow-hidden bg-custom-black pb-[60px] pt-[60px] text-white lg:pb-24 lg:pt-[100px]"
     >
       <img
-        src={"/assets/main/self-educate/bg-image.svg"}
+        src="/assets/common/bg-image.svg"
         alt="Background image"
         className="absolute -bottom-7 left-0 -z-[1] hidden lg:block"
       />
       <img
-        src={"/assets/main/self-educate/bg-image.svg"}
+        src="/assets/common/bg-image.svg"
         alt="Background image"
         className="absolute -right-5 top-20 -z-[1] hidden -scale-x-100 lg:block"
       />

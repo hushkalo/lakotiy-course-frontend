@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -31,9 +30,9 @@ export function Header({ links }: IHeaderProps) {
   return (
     <header className="fixed z-50 w-full bg-[#0c0c0c] lg:bg-[#0c0c0cf6]">
       <div className="container m-auto flex items-center justify-between p-3 lg:px-5 lg:pt-7">
-        <Link href="/" className="h-[37px] w-[99px] lg:h-[72px] lg:w-[179px]">
+        <a href="/" className="h-[37px] w-[99px] lg:h-[72px] lg:w-[179px]">
           <img src={"/assets/header/logo-master.svg"} alt="Logo Master" />
-        </Link>
+        </a>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="hover:bg-inherit">
@@ -49,13 +48,13 @@ export function Header({ links }: IHeaderProps) {
               <SheetHeader>
                 <SheetTitle className="sr-only">Burger</SheetTitle>
                 <div className="flex items-center justify-between">
-                  <Link href="/">
+                  <a href="/">
                     <img
                       src={"/assets/header/logo-master-mobile.svg"}
                       className="h-[47px] w-[119px]"
                       alt="Logo Master"
                     />
-                  </Link>
+                  </a>
 
                   <SheetClose>
                     <img src={"/assets/header/close.svg"} alt="Close" />
@@ -71,7 +70,7 @@ export function Header({ links }: IHeaderProps) {
                         className="border-0 border-b border-[#D2D2D2] py-4 text-lg font-medium"
                       >
                         <SheetClose asChild>
-                          <Link href={linkId}>{t(nameLink)}</Link>
+                          <a href={linkId}>{t(nameLink)}</a>
                         </SheetClose>
                       </li>
                     ))}

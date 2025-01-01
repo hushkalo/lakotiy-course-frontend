@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button.tsx";
 export function WelcomeBlock() {
   const { t } = useTranslation();
   return (
-    <div className="rounded-b-[30px] bg-custom-black pb-[60px] pt-12 lg:pb-24 lg:pt-[190px]">
+    <div className="rounded-b-[30px] bg-custom-black pb-[60px] pt-16 lg:pb-24 lg:pt-[190px]">
       <div className="container m-auto space-y-[60px] px-4 lg:space-y-[124px] lg:px-5">
         <div className="flex flex-col space-y-[60px] lg:items-center lg:justify-between lg:space-y-[84px]">
-          <div className="flex w-full flex-col items-center space-y-6 lg:flex-row lg:items-end lg:space-y-0">
+          <div className="flex w-full flex-col items-center space-y-6 lg:flex-row lg:items-start lg:space-y-0">
             <div className="lg:w-1/2">
               <p className="flex items-center align-middle text-sm font-medium uppercase leading-tight text-white lg:text-xl">
                 {t("main.welcome.title-text.text1")}
@@ -20,13 +20,15 @@ export function WelcomeBlock() {
                 {t("main.welcome.title-text.text3")}
               </p>
             </div>
-            <iframe
-              src="https://www.youtube.com/embed/g90KZ-Gjb0w"
-              title="YouTube video player"
-              className="h-[181px] w-[255px] bg-white lg:h-[378px] lg:w-[535px]"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <div className="lg:flex lg:w-1/2 lg:justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/g90KZ-Gjb0w"
+                title="YouTube video player"
+                className="h-[435px] w-[245px]"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
           <div className="flex w-full flex-col items-center space-y-[40px] lg:flex-row lg:items-center lg:justify-between">
             <div className="flex w-full lg:w-1/2">

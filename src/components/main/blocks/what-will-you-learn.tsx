@@ -1,7 +1,5 @@
 import { useTranslation } from "react-i18next";
 
-import { StackTechnology } from "./stack-technology.tsx";
-
 import {
   Accordion,
   AccordionContent,
@@ -59,12 +57,12 @@ export function WhatWillYouLearn() {
       className="relative overflow-hidden rounded-[30px] bg-custom-black pb-[60px] pt-12 lg:pb-20 lg:pt-[100px]"
     >
       <img
-        src={"/assets/main/what-will-learn-block/bg-image.svg"}
+        src="/assets/common/bg-image.svg"
         alt=""
         className="absolute left-0 top-1/3 hidden lg:block"
       />
       <img
-        src={"/assets/main/what-will-learn-block/bg-image.svg"}
+        src="/assets/common/bg-image.svg"
         alt=""
         className="absolute -right-10 top-[60%] hidden -scale-x-100 lg:block"
       />
@@ -120,7 +118,6 @@ export function WhatWillYouLearn() {
             <AccordionBlock contentBlocks={contentBlocks} />
           </div>
         </div>
-        <StackTechnology />
       </div>
     </div>
   );
