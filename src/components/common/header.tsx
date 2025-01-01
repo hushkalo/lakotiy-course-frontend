@@ -29,9 +29,9 @@ export function Header({ links }: IHeaderProps) {
     }
   }, []);
   return (
-    <header className="z-50 w-full bg-[#0c0c0c] lg:fixed lg:bg-[#0c0c0cf6]">
-      <div className="container m-auto flex items-center justify-between p-4 lg:px-5 lg:pt-7">
-        <Link href="/" className="h-[47px] w-[119px] lg:h-[72px] lg:w-[179px]">
+    <header className="fixed z-50 w-full bg-[#0c0c0c] lg:bg-[#0c0c0cf6]">
+      <div className="container m-auto flex items-center justify-between p-3 lg:px-5 lg:pt-7">
+        <Link href="/" className="h-[37px] w-[99px] lg:h-[72px] lg:w-[179px]">
           <img src={"/assets/header/logo-master.svg"} alt="Logo Master" />
         </Link>
         <Sheet>
