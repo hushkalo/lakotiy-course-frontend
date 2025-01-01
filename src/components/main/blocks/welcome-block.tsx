@@ -38,7 +38,13 @@ export function WelcomeBlock() {
                 {t("main.welcome.title-text.text3")}
               </p>
             </div>
-            <div className="h-[181px] w-[255px] bg-white lg:h-[378px] lg:w-[535px]" />
+            <iframe
+              src="https://www.youtube.com/embed/g90KZ-Gjb0w"
+              title="YouTube video player"
+              className="h-[181px] w-[255px] bg-white lg:h-[378px] lg:w-[535px]"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
           <div className="flex w-full flex-col items-center space-y-[40px] lg:flex-row lg:items-center lg:justify-between">
             <div className="flex w-full lg:w-1/2">
@@ -62,7 +68,7 @@ export function WelcomeBlock() {
               key={`${item.title}_${index}`}
               className="rounded-2xl bg-custom-gray px-4 py-6 leading-none text-white lg:w-[25%] lg:bg-none lg:pl-[38px] lg:pr-[30px]"
             >
-              <p className="text-default mb-3 text-[26px] font-extrabold lg:mb-4 lg:text-[32px]">
+              <p className="mb-3 text-[26px] font-extrabold text-default lg:mb-4 lg:text-[32px]">
                 {t(item.title)}
               </p>
               <p className="text-base font-medium lg:text-lg">

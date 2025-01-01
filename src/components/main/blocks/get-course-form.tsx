@@ -85,7 +85,6 @@ export function GetCourseForm() {
     mode: "onBlur",
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: TRegisterUserSchemas) {
     setLoading(true);
     try {
@@ -106,8 +105,11 @@ export function GetCourseForm() {
   return isResponse ? (
     getStatusOrder(statusError, t, setResponse)
   ) : (
-    <>
-      <div className="lg:w-[48.4%]">
+    <div className="relative lg:w-[48.4%]">
+      <div className="absolute z-10 flex h-full w-full items-center justify-center rounded bg-black/80 text-2xl text-white">
+        <p>Незабаром буде доступна</p>
+      </div>
+      <div className="w-full">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
             <FormField
@@ -332,7 +334,7 @@ export function GetCourseForm() {
             />
 
             <Button
-              type="submit"
+              type="button" // поемнять не забыть
               className="mt-[52px] flex h-16 w-full items-center rounded-xl bg-[#5A61F0] px-10 py-5 text-lg font-semibold lg:max-w-[250px] lg:text-[22px]"
               disabled={isLoading}
             >
@@ -356,6 +358,6 @@ export function GetCourseForm() {
           {t("self-educate.get-course.blocks.block1.body.link")}
         </a>
       </div>
-    </>
+    </div>
   );
 }
