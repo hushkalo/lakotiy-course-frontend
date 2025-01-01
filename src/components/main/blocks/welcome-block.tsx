@@ -3,24 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button.tsx";
 
 export function WelcomeBlock() {
-  const list = [
-    {
-      title: "main.welcome.box-content.section1.title",
-      content: "main.welcome.box-content.section1.content",
-    },
-    {
-      title: "main.welcome.box-content.section2.title",
-      content: "main.welcome.box-content.section2.content",
-    },
-    {
-      title: "main.welcome.box-content.section3.title",
-      content: "main.welcome.box-content.section3.content",
-    },
-    {
-      title: "main.welcome.box-content.section4.title",
-      content: "main.welcome.box-content.section4.content",
-    },
-  ];
   const { t } = useTranslation();
   return (
     <div className="rounded-b-[30px] bg-custom-black pb-[60px] pt-12 lg:pb-24 lg:pt-[190px]">
@@ -61,21 +43,6 @@ export function WelcomeBlock() {
               </p>
             </div>
           </div>
-        </div>
-        <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-y-0 lg:rounded-3xl lg:bg-[#1F1F26] lg:py-5">
-          {list.map((item, index) => (
-            <div
-              key={`${item.title}_${index}`}
-              className="rounded-2xl bg-custom-gray px-4 py-6 leading-none text-white lg:w-[25%] lg:bg-none lg:pl-[38px] lg:pr-[30px]"
-            >
-              <p className="mb-3 text-[26px] font-extrabold text-default lg:mb-4 lg:text-[32px]">
-                {t(item.title)}
-              </p>
-              <p className="text-base font-medium lg:text-lg">
-                {t(item.content)}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
     </div>
