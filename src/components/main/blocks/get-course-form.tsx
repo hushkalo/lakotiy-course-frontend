@@ -93,6 +93,7 @@ export function GetCourseForm() {
         .post("course/create", { json: { ...rest, phone: `+380${phone}` } })
         .json();
       setStatusError("success");
+      form.reset();
     } catch (error) {
       setStatusError("reject");
       console.error(error);
