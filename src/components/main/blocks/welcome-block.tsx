@@ -22,7 +22,7 @@ export function WelcomeBlock() {
             </div>
             <div className="lg:flex lg:w-1/2 lg:justify-center">
               <iframe
-                src="https://www.youtube.com/embed/g90KZ-Gjb0w"
+                src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_ID}`}
                 title="YouTube video player"
                 className="h-[435px] w-[245px]"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
