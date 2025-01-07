@@ -13,7 +13,7 @@ export function HowDoIGetTheCourse() {
             {t("self-educate.how-do-i-get-the-course.title")}
           </h1>
           <a
-            href="#"
+            href={import.meta.env.VITE_YOUTUBE_LINK_GET_COURSE}
             target="_blank"
             rel="noreferrer"
             className="hover:bg-red-hover self-center rounded-xl bg-[#FF4242] px-5 py-4 text-center text-base font-semibold text-white md:w-[60%] lg:ml-[132px] lg:self-end lg:py-5 xl:w-max"
@@ -29,7 +29,7 @@ export function HowDoIGetTheCourse() {
           />
           <div className="mb-10 flex flex-col lg:mb-20 lg:flex-row lg:justify-between">
             <div className="mb-6 flex lg:mb-0">
-              <p className="bg-light-violet-gradient h-max rounded-[30px] px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
+              <p className="h-max rounded-[30px] bg-light-violet-gradient px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
                 {t("self-educate.how-do-i-get-the-course.nameStep")} 1
               </p>
               <div className="ml-8 w-[63%] lg:w-[50%]">
@@ -57,7 +57,7 @@ export function HowDoIGetTheCourse() {
           </div>
           <div className="mb-10 flex flex-col lg:mb-20 lg:flex-row lg:justify-between">
             <div className="mb-6 flex lg:mb-0 lg:w-1/2">
-              <p className="bg-light-violet-gradient h-max rounded-[30px] px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
+              <p className="h-max rounded-[30px] bg-light-violet-gradient px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
                 {t("self-educate.how-do-i-get-the-course.nameStep")} 2
               </p>
               <div className="ml-8 w-[68%] lg:w-[58%]">
@@ -75,7 +75,7 @@ export function HowDoIGetTheCourse() {
           </div>
           <div className="mb-10 flex flex-col lg:mb-20 lg:flex-row lg:justify-between">
             <div className="mb-6 flex lg:mb-0 lg:w-1/2">
-              <p className="bg-light-violet-gradient h-max rounded-[30px] px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
+              <p className="h-max rounded-[30px] bg-light-violet-gradient px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
                 {t("self-educate.how-do-i-get-the-course.nameStep")} 3
               </p>
               <div className="ml-8 w-[50%]">
@@ -98,7 +98,7 @@ export function HowDoIGetTheCourse() {
           </div>
           <div className="mb-10 flex flex-col lg:mb-20 lg:flex-row lg:justify-between">
             <div className="mb-6 flex lg:mb-0 lg:w-1/2">
-              <p className="bg-light-violet-gradient h-max rounded-[30px] px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
+              <p className="h-max rounded-[30px] bg-light-violet-gradient px-4 py-3 text-sm font-medium text-white lg:px-[21px] lg:py-[10px] lg:text-base">
                 {t("self-educate.how-do-i-get-the-course.nameStep")} 4
               </p>
               <div className="ml-8 w-[55%]">
