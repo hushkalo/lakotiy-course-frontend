@@ -57,6 +57,7 @@ export function FullCourseProgram() {
     },
     {
       title: t("self-educate.full-course.blocks.block6.title"),
+      tag: t("self-educate.full-course.blocks.block6.tag"),
       isVideo: true,
     },
   ];
