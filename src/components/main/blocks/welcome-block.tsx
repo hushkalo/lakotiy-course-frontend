@@ -22,12 +22,13 @@ export function WelcomeBlock() {
             </div>
             <div className="lg:flex lg:w-1/2 lg:justify-center">
               <iframe
-                src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_ID}`}
+                src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_PREVIEW_ID}
+                `}
                 title="YouTube video player"
                 className="h-[435px] w-[245px]"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           </div>
           <div className="flex w-full flex-col items-center space-y-[40px] lg:flex-row lg:items-center lg:justify-between">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -6,6 +7,34 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion.tsx";
+
+function AccordionItemContent({
+  title,
+  content,
+  index,
+}: {
+  title: string;
+  content: string;
+  index: number;
+}) {
+  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <AccordionItem
+      value={`${title}_${index}`}
+      className="rounded-3xl border-none bg-custom-gray px-5 py-4 text-lg hover:bg-custom-gray/70 lg:px-[30px] lg:py-10"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <AccordionTrigger className="hover:no-underline" cnArrow="size-10">
+        <div className="flex items-center space-x-8 text-lg">
+          <p className="text-2xl text-default-gradient-to">{index + 1}</p>
+          <p>{t(title)}</p>
+        </div>
+      </AccordionTrigger>
+      <AccordionContent className="pt-5 text-lg">{t(content)}</AccordionContent>
+    </AccordionItem>
+  );
+}
 
 export function QuestionsAndAnswers() {
   const { t } = useTranslation();
@@ -50,26 +79,12 @@ export function QuestionsAndAnswers() {
         <div className="w-full">
           <Accordion type="single" collapsible className="space-y-6">
             {listQuestions.map((question, index) => (
-              <AccordionItem
-                key={index}
-                value={`${question.title}_${index}`}
-                className="rounded-3xl border-none bg-custom-gray px-5 py-4 text-lg hover:bg-custom-gray/70 lg:px-[30px] lg:py-10"
-              >
-                <AccordionTrigger
-                  className="hover:no-underline"
-                  cnArrow="size-10"
-                >
-                  <div className="flex items-center space-x-8 text-lg">
-                    <p className="text-2xl text-default-gradient-to">
-                      {index + 1}
-                    </p>
-                    <p>{t(question.title)}</p>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-5 text-lg">
-                  {t(question.content)}
-                </AccordionContent>
-              </AccordionItem>
+              <AccordionItemContent
+                key={`${question.title}_${index}`}
+                title={question.title}
+                content={question.content}
+                index={index}
+              />
             ))}
           </Accordion>
         </div>

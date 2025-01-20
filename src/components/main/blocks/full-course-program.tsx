@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { cn } from "@/lib/utils.ts";
+
 export function FullCourseProgram() {
   const { t } = useTranslation();
   const [open, setOpen] = useState("");
@@ -53,8 +55,11 @@ export function FullCourseProgram() {
       tag: t("self-educate.full-course.blocks.block5.tag"),
       list: [t("self-educate.full-course.blocks.block5.list.item1")],
     },
+    {
+      title: t("self-educate.full-course.blocks.block6.title"),
+      isVideo: true,
+    },
   ];
-
   return (
     <div
       id="program"
@@ -65,15 +70,17 @@ export function FullCourseProgram() {
           {t("self-educate.full-course.title")}
         </h1>
         <div className="w-full">
-          {content.map(({ title, tag, list }, i) => {
+          {content.map(({ title, tag, list, isVideo }, i) => {
             return (
               <div
                 key={i}
-                className={`${
-                  open === `block${i}`
-                    ? "max-[1024px]:hover-bg-question lg:bg-[#1F1F26]"
-                    : "bg-[#1F1F26]"
-                } lg:hover:hover-bg-question mb-5 cursor-pointer rounded-3xl px-4 py-5 lg:px-10 lg:py-[30px]`}
+                className={cn(
+                  "lg:hover:hover-bg-question mb-5 cursor-pointer rounded-3xl bg-[#1F1F26] px-4 py-5 lg:px-10 lg:py-[30px]",
+                  {
+                    "max-[1024px]:hover-bg-question lg:bg-[#1F1F26]":
+                      open === `block${i}`,
+                  }
+                )}
                 onClick={() => {
                   setOpen(open === `block${i}` ? "" : `block${i}`);
                 }}
@@ -92,24 +99,40 @@ export function FullCourseProgram() {
                     <img
                       src={"/assets/main/what-will-learn-block/arrow-down.svg"}
                       alt="Arrow Down"
-                      className={`${
-                        open === `block${i}` ? "rotate-180" : "rotate-0"
-                      } h-[26px] w-[26px] transition-all duration-500 lg:h-12 lg:w-12`}
+                      className={cn(
+                        "h-[26px] w-[26px] rotate-0 transition-all duration-500 lg:h-12 lg:w-12",
+                        {
+                          "rotate-180": open === `block${i}`,
+                        }
+                      )}
                     />
                   </div>
                 </div>
                 <div
-                  className={`${
-                    open === `block${i}`
-                      ? "max-h-[430px] sm:max-h-[260px] lg:max-h-[250px]"
-                      : "max-h-0"
-                  } overflow-hidden transition-all duration-500`}
+                  className={cn(
+                    "max-h-0 overflow-hidden transition-all duration-500",
+                    {
+                      "max-h-[430px] sm:max-h-[260px] lg:max-h-[250px]":
+                        open === `block${i}`,
+                      "max-h-[435px] sm:max-h-[435px] lg:max-h-[435px]":
+                        open === `block${i}` && isVideo,
+                      "flex justify-center": isVideo,
+                    }
+                  )}
                 >
-                  <ul className="list-decimal pl-6 pt-5 uppercase lg:p-5">
-                    {list.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  {!isVideo ? (
+                    <ul className="list-decimal pl-6 pt-5 uppercase lg:p-5">
+                      {list && list.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_BONUS_ID}`}
+                      title="YouTube video player"
+                      className="h-[435px] w-[245px]"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  )}
                 </div>
               </div>
             );
