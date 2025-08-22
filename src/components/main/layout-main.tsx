@@ -32,6 +32,7 @@ export function MainLayout() {
         const data = await response.json();
         setQuantity(data.quantity);
       } catch (error) {
+        setQuantity(145);
         console.error(error);
       } finally {
         setIsLoading(false);
