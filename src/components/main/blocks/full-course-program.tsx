@@ -55,11 +55,6 @@ export function FullCourseProgram() {
       tag: t("self-educate.full-course.blocks.block5.tag"),
       list: [t("self-educate.full-course.blocks.block5.list.item1")],
     },
-    {
-      title: t("self-educate.full-course.blocks.block6.title"),
-      tag: t("self-educate.full-course.blocks.block6.tag"),
-      isVideo: true,
-    },
   ];
   return (
     <div
@@ -71,7 +66,7 @@ export function FullCourseProgram() {
           {t("self-educate.full-course.title")}
         </h1>
         <div className="w-full">
-          {content.map(({ title, tag, list, isVideo }, i) => {
+          {content.map(({ title, tag, list }, i) => {
             return (
               <div
                 key={i}
@@ -115,25 +110,12 @@ export function FullCourseProgram() {
                     {
                       "max-h-[430px] sm:max-h-[260px] lg:max-h-[250px]":
                         open === `block${i}`,
-                      "max-h-[435px] sm:max-h-[435px] lg:max-h-[435px]":
-                        open === `block${i}` && isVideo,
-                      "flex justify-center": isVideo,
                     }
                   )}
                 >
-                  {!isVideo ? (
-                    <ul className="list-decimal pl-6 pt-5 uppercase lg:p-5">
-                      {list && list.map((item, i) => <li key={i}>{item}</li>)}
-                    </ul>
-                  ) : (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_BONUS_ID}`}
-                      title="YouTube video player"
-                      className="h-[435px] w-[245px]"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  )}
+                  <ul className="list-decimal pl-6 pt-5 uppercase lg:p-5">
+                    {list && list.map((item, i) => <li key={i}>{item}</li>)}
+                  </ul>
                 </div>
               </div>
             );

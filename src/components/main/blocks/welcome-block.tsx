@@ -13,21 +13,18 @@ export function WelcomeBlock() {
               <p className="flex items-center align-middle text-sm font-medium uppercase leading-tight text-white lg:text-xl">
                 {t("main.welcome.title-text.text1")}
               </p>
-              <p className="py-4 text-[56px] font-extrabold uppercase leading-none tracking-[0.56px] text-white lg:text-[84px]">
+              <p className="py-4 text-[50px] font-extrabold uppercase leading-none tracking-[0.56px] text-white lg:text-[64px]">
                 {t("main.welcome.title-text.text2")}
               </p>
-              <p className="text-sm font-medium leading-none text-white">
+              <blockquote className="border-l-2 border-primary pl-4 text-sm font-medium italic leading-snug text-white">
                 {t("main.welcome.title-text.text3")}
-              </p>
+              </blockquote>
             </div>
             <div className="lg:flex lg:w-1/2 lg:justify-center">
-              <iframe
-                src={`https://www.youtube.com/embed/${import.meta.env.VITE_YOUTUBE_VIDEO_PREVIEW_ID}
-                `}
+              <img
+                src="/welcome.png"
                 title="YouTube video player"
-                className="h-[435px] w-[245px]"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+                className="h-[535px] rounded object-cover"
               />
             </div>
           </div>
