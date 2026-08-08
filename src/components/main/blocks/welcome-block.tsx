@@ -10,9 +10,6 @@ export function WelcomeBlock() {
         <div className="flex flex-col space-y-[60px] lg:items-center lg:justify-between lg:space-y-[84px]">
           <div className="flex w-full flex-col items-center space-y-6 lg:flex-row lg:items-start lg:space-y-0">
             <div className="lg:w-1/2">
-              <p className="flex items-center align-middle text-sm font-medium uppercase leading-tight text-white lg:text-xl">
-                {t("main.welcome.title-text.text1")}
-              </p>
               <p className="py-4 text-[50px] font-extrabold uppercase leading-none tracking-[0.56px] text-white lg:text-[64px]">
                 {t("main.welcome.title-text.text2")}
               </p>
